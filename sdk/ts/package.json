@@ -1,0 +1,20 @@
+{
+  "name": "@unit-economics/sdk",
+  "version": "0.1.0",
+  "description": "Tiny browser/Node client for the unit-economics ingestion API",
+  "license": "MIT",
+  "author": "Alessandro Paolo Alghisi",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}
