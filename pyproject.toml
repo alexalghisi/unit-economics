@@ -25,6 +25,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "pytest-asyncio>=1.0", "mypy>=1.13", "ruff>=0.8", "standardwebhooks>=1.0"]
+preview = ["playwright>=1.48", "pillow>=11"]
 
 [tool.setuptools.packages.find]
 where = ["server"]
@@ -41,12 +42,12 @@ markers = ["integration: needs the real Redis broker and a worker subprocess"]
 [tool.mypy]
 strict = true
 python_version = "3.13"
-files = ["server", "sdk/python", "scripts", "bench"]
+files = ["server", "sdk/python", "scripts", "bench", "examples"]
 exclude = ["server/migrations/"]
 plugins = ["pydantic.mypy"]
 
 [[tool.mypy.overrides]]
-module = ["standardwebhooks.*"]
+module = ["standardwebhooks.*", "asyncpg.*"]
 ignore_missing_imports = true
 
 [tool.ruff]
@@ -62,3 +63,5 @@ ignore = ["S101", "S311", "RUF012"]
 "server/tests/**" = ["S105", "S106", "S108", "S603", "S607"]
 "sdk/python/tests/**" = ["S105", "S106"]
 "server/migrations/**" = ["E501"]
+# Developer tools: long SQL/HTML literals and subprocess calls with fixed arguments.
+"{bench,scripts,examples}/**" = ["E501", "S603", "ASYNC109", "ASYNC221", "PT018"]
