@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ue-api"
+version = "0.1.0"
+description = "Ingestion, rollups and unit economics API for LLM-backed products"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [{ name = "Alessandro Paolo Alghisi" }]
+dependencies = [
+    "fastapi>=0.115",
+    "pydantic[email]>=2.9",
+    "pydantic-settings>=2.6",
+    "sqlalchemy[asyncio]>=2.0.36",
+    "asyncpg>=0.30",
+    "alembic>=1.14",
+    "dramatiq[redis]>=2.0",
+    "redis>=5.2",
+    "httpx>=0.28",
+    "uvicorn>=0.32",
+    "orjson>=3.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=1.0", "mypy>=1.13", "ruff>=0.8", "standardwebhooks>=1.0"]
+
+[tool.setuptools.packages.find]
+where = ["server"]
+include = ["ue_api*"]
+
+[tool.pytest.ini_options]
+testpaths = ["server/tests", "sdk/python/tests"]
+pythonpath = ["server"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
+markers = ["integration: needs the real Redis broker and a worker subprocess"]
+
+[tool.mypy]
+strict = true
+python_version = "3.13"
+files = ["server", "sdk/python", "scripts", "bench"]
+exclude = ["server/migrations/"]
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["standardwebhooks.*"]
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 110
+target-version = "py313"
+extend-exclude = ["web", "sdk/ts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "ASYNC", "S", "PT", "RET", "C4", "DTZ"]
+ignore = ["S101", "S311", "RUF012"]
+
+[tool.ruff.lint.per-file-ignores]
+"server/tests/**" = ["S105", "S106", "S108", "S603", "S607"]
+"sdk/python/tests/**" = ["S105", "S106"]
+"server/migrations/**" = ["E501"]
