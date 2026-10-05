@@ -1,0 +1,32 @@
+{
+  "machine": "2 vCPU, shared; API, worker, Postgres, Redis and the load generator on one box",
+  "throughput": {
+    "events": 304000,
+    "seconds": 20.14,
+    "events_per_s": 15096,
+    "request": {
+      "n": 608,
+      "p50_ms": 252.6,
+      "p95_ms": 367.3,
+      "max_ms": 607.7,
+      "mean_ms": 254.4
+    },
+    "concurrency": 8,
+    "batch": 500
+  },
+  "rollup_lag_saturated": {
+    "n": 304000,
+    "p50_ms": 283.3,
+    "p95_ms": 553.1,
+    "max_ms": 908.2,
+    "mean_ms": 308.3
+  },
+  "rollup_lag_steady": {
+    "n": 40100,
+    "p50_ms": 28.5,
+    "p95_ms": 63.2,
+    "max_ms": 401.7,
+    "mean_ms": 35.0,
+    "rate_events_per_s": 2000
+  }
+}
