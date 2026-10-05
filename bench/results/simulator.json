@@ -1,0 +1,171 @@
+{
+  "events": 2087685,
+  "usage_daily_rows": 93406,
+  "simulations": {
+    "Free (19 customers), 30d": {
+      "server": {
+        "n": 30,
+        "p50_ms": 30.2,
+        "p95_ms": 41.3,
+        "max_ms": 42.0,
+        "mean_ms": 31.3
+      },
+      "http": {
+        "n": 30,
+        "p50_ms": 35.0,
+        "p95_ms": 45.5,
+        "max_ms": 45.8,
+        "mean_ms": 35.7
+      }
+    },
+    "Free (19 customers), 60d": {
+      "server": {
+        "n": 30,
+        "p50_ms": 47.0,
+        "p95_ms": 55.6,
+        "max_ms": 63.5,
+        "mean_ms": 48.6
+      },
+      "http": {
+        "n": 30,
+        "p50_ms": 51.8,
+        "p95_ms": 63.2,
+        "max_ms": 70.2,
+        "mean_ms": 53.3
+      }
+    },
+    "Pro (134 customers), 30d": {
+      "server": {
+        "n": 30,
+        "p50_ms": 44.2,
+        "p95_ms": 61.9,
+        "max_ms": 88.2,
+        "mean_ms": 47.1
+      },
+      "http": {
+        "n": 30,
+        "p50_ms": 48.8,
+        "p95_ms": 66.8,
+        "max_ms": 92.3,
+        "mean_ms": 51.7
+      }
+    },
+    "Pro (134 customers), 60d": {
+      "server": {
+        "n": 30,
+        "p50_ms": 75.1,
+        "p95_ms": 86.3,
+        "max_ms": 103.7,
+        "mean_ms": 76.1
+      },
+      "http": {
+        "n": 30,
+        "p50_ms": 79.5,
+        "p95_ms": 91.1,
+        "max_ms": 109.6,
+        "mean_ms": 81.0
+      }
+    },
+    "Scale (34 customers), 30d": {
+      "server": {
+        "n": 30,
+        "p50_ms": 46.0,
+        "p95_ms": 74.0,
+        "max_ms": 91.2,
+        "mean_ms": 50.6
+      },
+      "http": {
+        "n": 30,
+        "p50_ms": 50.7,
+        "p95_ms": 79.5,
+        "max_ms": 95.7,
+        "mean_ms": 55.3
+      }
+    },
+    "Scale (34 customers), 60d": {
+      "server": {
+        "n": 30,
+        "p50_ms": 79.4,
+        "p95_ms": 93.9,
+        "max_ms": 119.4,
+        "mean_ms": 82.1
+      },
+      "http": {
+        "n": 30,
+        "p50_ms": 84.0,
+        "p95_ms": 99.6,
+        "max_ms": 152.9,
+        "mean_ms": 87.8
+      }
+    },
+    "Starter (113 customers), 30d": {
+      "server": {
+        "n": 30,
+        "p50_ms": 40.9,
+        "p95_ms": 48.3,
+        "max_ms": 54.5,
+        "mean_ms": 42.0
+      },
+      "http": {
+        "n": 30,
+        "p50_ms": 45.0,
+        "p95_ms": 52.8,
+        "max_ms": 59.0,
+        "mean_ms": 46.3
+      }
+    },
+    "Starter (113 customers), 60d": {
+      "server": {
+        "n": 30,
+        "p50_ms": 76.9,
+        "p95_ms": 88.8,
+        "max_ms": 97.6,
+        "mean_ms": 78.2
+      },
+      "http": {
+        "n": 30,
+        "p50_ms": 82.4,
+        "p95_ms": 93.8,
+        "max_ms": 103.0,
+        "mean_ms": 83.2
+      }
+    }
+  },
+  "endpoints": {
+    "summary 30d": {
+      "n": 30,
+      "p50_ms": 45.6,
+      "p95_ms": 56.3,
+      "max_ms": 57.1,
+      "mean_ms": 46.5
+    },
+    "customers 30d": {
+      "n": 30,
+      "p50_ms": 49.3,
+      "p95_ms": 61.4,
+      "max_ms": 91.3,
+      "mean_ms": 51.6
+    },
+    "features 30d": {
+      "n": 30,
+      "p50_ms": 73.3,
+      "p95_ms": 109.1,
+      "max_ms": 121.2,
+      "mean_ms": 76.3
+    },
+    "timeseries 60d": {
+      "n": 30,
+      "p50_ms": 337.4,
+      "p95_ms": 401.3,
+      "max_ms": 423.3,
+      "mean_ms": 338.3
+    },
+    "customer drill-down 30d": {
+      "n": 30,
+      "p50_ms": 19.0,
+      "p95_ms": 51.1,
+      "max_ms": 58.3,
+      "mean_ms": 22.7
+    }
+  }
+}
