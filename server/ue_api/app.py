@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import APIRouter, FastAPI
 
+from ue_api.billing.router import router as billing
 from ue_api.db import dispose_engines
 from ue_api.ingestion.router import router as ingestion
 
@@ -16,7 +17,7 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
 def create_app() -> FastAPI:
     app = FastAPI(title="unit-economics", version="0.1.0", lifespan=lifespan)
     v1 = APIRouter(prefix="/v1")
-    for router in (ingestion,):
+    for router in (ingestion, billing):
         v1.include_router(router)
     app.include_router(v1)
 
